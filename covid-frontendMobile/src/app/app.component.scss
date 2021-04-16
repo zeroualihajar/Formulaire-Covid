@@ -1,0 +1,29 @@
+  .active-item{
+      border-left :8px solid var(--ion-color-primary)
+  }
+  ion-split-pane{
+    --ion-background-color: #C1D0DA;
+    opacity:1;
+    color:white;
+    font-family: Georgia, serif;
+   font-size: 20px;
+  }
+ 
+  .menu-content-logout{
+    
+    font-family: Georgia, serif;
+    font-size: 16px;
+    margin-left: 16px !important;
+  }
+  // apm-map{
+  //   height: 100px;
+  // }
+
+  
+ion-header{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: #1A10AF;
+  box-shadow: 0 4px 4px 0 #1A10AF;
+}

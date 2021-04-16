@@ -1,0 +1,19 @@
+<h1>Les Demandes Non Traités</h1>
+<div class="container" style="text-align: center;">
+  <table class="table">
+    <thead  style="background-color: #1A10AF; color: #fbe0c4;">
+      <tr>
+        <th scope="col">Demande N °</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of data">
+        <td>{{obj.id}}</td>
+        <td>
+          <button class="button" routerLink="/traitement/{{obj.id}}">Traiter la demande</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

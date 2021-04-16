@@ -1,0 +1,67 @@
+<ion-content>
+  <ion-card-title>Test covid 19</ion-card-title>
+  <ion-card class="card-body"> 
+    <ion-avatar> 
+      <ion-img src="https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg"></ion-img>      
+    </ion-avatar>
+    <ion-card-content >
+        <form #QuestionsForm= ngForm (ngSubmit)="onSubmit()">
+
+            <ion-label type="text" style="color: #1A10AF">Avez-vous été testé pour le corona virus? </ion-label>
+            <ion-radio-group value="test"  [(ngModel)]="form.test_corona" name="test_corona"> 
+              <div  style="border: 2px solid #1A10AF;">
+                <ion-item  lines="none" id="test_corona" text-wrap *ngFor="let testR of formShow.test_corona; let i = index" > 
+                
+                  <ion-radio slot="start" [value]="testR.content"></ion-radio>
+                  <ion-label text-wrap>{{testR.content}}</ion-label>
+                </ion-item>  
+              </div>       
+            </ion-radio-group>
+
+            <br>
+           <ion-label type="text" style="color: #1A10AF">En ce qui concerne l'isolement médical. lequel des éléments suivants s'applique à vous: </ion-label>
+            <ion-radio-group value="test" name="isolement_medical" [(ngModel)]="form.isolement_medical" (ionChange)="test($event)"> 
+              <div  style="border: 2px solid #1A10AF;">
+                <ion-item  lines="none" id="isolement_medical" text-wrap *ngFor="let testIm of formShow.isolement_medical; let i =index" > 
+                  <ion-radio slot="start" [value]="testIm.content"></ion-radio>
+                  <ion-label text-wrap>{{testIm.content}}</ion-label>
+                </ion-item>  
+               </div>       
+            </ion-radio-group>
+            <br>
+            <ion-label type="text" style="color: #1A10AF" >Avez-vous actuellement ou avez-vous déjà vécu l'une des situations suivantes: </ion-label>
+            <ion-radio-group value="situations" (ionChange)="situations($event)"> 
+              <div  style="border: 2px solid #1A10AF;">
+                <ion-item lines="none" *ngFor="let testS of formShow.situations" > 
+                  <ion-label text-wrap > {{testS.content}}</ion-label>
+                  <ion-checkbox slot="start" [value]="testS.content">
+                  </ion-checkbox>   
+              </ion-item>
+             </div>
+            </ion-radio-group>
+
+
+            <br>
+             <ion-label type="text" style="color: #1A10AF" >Avez-vous eu les symptômes suivants aujourd'hui?.Veuillez les cocher si c'est le cas : </ion-label>
+              <ion-radio-group value="symptomes" (ionChange)="symptomes($event)">   
+              <div  style="border: 2px solid #1A10AF;">
+                <ion-item lines="none"  *ngFor="let testRy of formShow.symptomes" > 
+                  <ion-label text-wrap> {{testRy.content}}</ion-label>
+                  <ion-checkbox slot="start" [value]="testRy.content" >
+                  </ion-checkbox>   
+                </ion-item>
+            </div>
+          </ion-radio-group>
+          <br>
+            <ion-label type="text" style="color: #1A10AF" >Depuis combien du temps avez-vous toussé? </ion-label>
+              <ion-item lines="none" id="temps_touse"   style="border: 2px solid #1A10AF;" > 
+                <ion-input type="number"  placeholder="temps" [(ngModel)]="form.temps_tousse" name="temps_touse"></ion-input>  
+             </ion-item>
+            <ion-button type="submit" class="primary" [disabled]="!QuestionsForm.valid">Tester</ion-button>
+        </form>
+    </ion-card-content>
+    
+   
+  </ion-card>
+ 
+ </ion-content>

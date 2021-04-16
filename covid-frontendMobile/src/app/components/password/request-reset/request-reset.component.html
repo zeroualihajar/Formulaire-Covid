@@ -1,0 +1,18 @@
+<ion-content>
+ <ion-card-title >Réinitialiser le mot de passe</ion-card-title>
+ <ion-card class="card-body"> 
+    <ion-avatar> 
+      <ion-img src="https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg"></ion-img>      
+    </ion-avatar> 
+    <ion-card-content >
+      <form #requestResetForm = ngForm (ngSubmit)="onSubmit()" >
+          <ion-item id="email" lines="none" style="border: 2px solid #1A10AF;">               
+            <ion-input type="email" placeholder="exemple@gmail.com" [(ngModel)]="form.email" name="email"></ion-input>  
+          </ion-item>
+          <ion-button type="submit" class="primary" style="margin-top: 4%" [disabled]="!requestResetForm.valid">Envoyer email</ion-button>
+          <a routerLink="/login"  class="btn btn-secondary float-right" id="btSin">SE CONNECTER</a>
+      </form>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

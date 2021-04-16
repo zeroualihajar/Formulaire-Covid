@@ -1,0 +1,44 @@
+.card-body {
+    background-color: white;
+    // border-radius: 12px;
+    color: black !important;
+    margin-top: 15%;
+
+    border: 2px solid #1A10AF;
+  }
+  .item-login-content{
+    
+    justify-content: center;
+    color: black;
+  }
+  ion-item:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  ion-item:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  ion-card-title{
+    text-align: center;
+    margin-top: 0%;
+    background-color: #1A10AF;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 27px;
+    padding-left: 4px;
+    padding-top: 5px;
+    height: 8%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+  }
+  #btSin{
+    background-color: #ff2e63; 
+    margin-top: 4%; 
+    height: 36px; 
+    font-size: 14px;
+    border: 2px solid #ff2e63;
+    font-weight: 500;
+
+  }

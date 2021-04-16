@@ -1,0 +1,33 @@
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1A10AF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px #fbe0c4;
+}
+
+.button:hover {background-color: #fbe0c4;
+  color: #1A10AF;
+  box-shadow: 0 2px #1A10AF;
+}
+
+.button:active {
+  background-color: #fbe0c4;
+  box-shadow: 0 2px #1A10AF;
+  color: #1A10AF;
+  transform: translateY(4px);
+}h1{
+
+  margin-top: 2%;
+  color: #91091e;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 40px;
+}

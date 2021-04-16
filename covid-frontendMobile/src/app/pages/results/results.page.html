@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-card-title >Résultats des Tests Effectués</ion-card-title>
+<div>
+<ion-list>
+  <div class="header" > 
+    <ion-label style="margin-left: 15%;">Date </ion-label>
+    <ion-label style="margin-left: 40%;">Résultat</ion-label>
+  </div>
+  
+  <ion-item *ngFor="let value of results" lines="none">
+   <ion-label slot="start">{{value['created_at']}}</ion-label>
+    
+    <ion-label slot="end">{{value['resultat']}}</ion-label>
+    
+  </ion-item>
+</ion-list>
+  
+</div>
+
+
+</ion-content>

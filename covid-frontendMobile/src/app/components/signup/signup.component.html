@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-card-title >S'inscrire</ion-card-title>
+  <ion-card class="card-body"> 
+    <ion-avatar> 
+      <ion-img src="https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg"></ion-img>      
+    </ion-avatar>
+    <ion-card-content >
+      <form #signupForm= ngForm (ngSubmit)="onSubmit()" style="border: 2px solid #1A10AF;">
+              
+        <div class="alert alert-danger" [hidden]="!error">
+            {{error}}
+        </div>
+          
+        <ion-item id="email" lines ="none">               
+          <ion-input type="email" placeholder="exemple@gmail.com" [(ngModel)]="form.email" name="email"></ion-input>  
+        </ion-item>
+              
+        <ion-item id="name" lines ="none">                   
+          <ion-input type="text" placeholder="Nom Complet" [(ngModel)]="form.name" name="name"></ion-input>    
+        </ion-item>
+
+        <ion-item id="password" lines ="none">                   
+          <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="form.password" name="password"></ion-input>    
+        </ion-item>
+
+        <ion-item id="ConfPassword" lines ="none" >                   
+          <ion-input type="password" placeholder="Confirmer le mot de passe" [(ngModel)]="form.password_confirmation" name="ConfPassword"></ion-input>    
+        </ion-item>
+        <ion-button type="submit" class="primary float-left" style="margin-top: 4%" [disabled]="!signupForm.valid">S'inscrire</ion-button>  
+        
+        <a routerLink="/login"  class="btn btn-secondary float-right" id="btSin">SE CONNECTER</a>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

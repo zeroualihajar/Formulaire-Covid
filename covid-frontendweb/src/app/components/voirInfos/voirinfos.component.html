@@ -1,0 +1,48 @@
+<h1 *ngFor="let obj of data">Les Informations du Patient n ° {{obj.id}}</h1>
+<div class="container">
+  <table class="table" style="border: 1px solid #1A10AF; background-color: #f8f5f1; font-weight: normal;" *ngFor="let obj of data">
+     <tr>
+        <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Id</th>
+        <td style="border: 1px solid #1A10AF">{{obj.id}}</td>
+      </tr>
+
+      <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Nom</th>
+          <td style="border: 1px solid #1A10AF">{{obj.first_name}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Prénom</th>
+          <td style="border: 1px solid #1A10AF">{{obj.last_name}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Sexe</th>
+          <td style="border: 1px solid #1A10AF">{{obj.sexe}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Adresse</th>
+          <td style="border: 1px solid #1A10AF">{{obj.address}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Ville</th>
+          <td style="border: 1px solid #1A10AF">{{obj.city}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Télèphone</th>
+          <td style="border: 1px solid #1A10AF">0.{{obj.phone}}</td>
+        </tr>
+
+        <tr>
+          <th scope="col" style="background-color: #1A10AF; color:#f8f5f1;">Age</th>
+          <td style="border: 1px solid #1A10AF">{{obj.age}}</td>
+        </tr>
+  </table>
+  <label>Résultat: {{resultat}} </label>
+  <div>
+    <button class="button3 float-right" routerLink="/traite"><span>Revenir en arrière</span></button>
+  </div>
+</div>

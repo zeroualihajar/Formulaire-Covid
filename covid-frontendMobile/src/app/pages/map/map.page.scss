@@ -1,0 +1,36 @@
+ion-header{
+    // margin-top: 7%;
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 20px;
+    font-weight: 10px;
+    height: 68px;
+    background-color: #1A10AF;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+ion-title{
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: 20px;
+    color: white;
+}
+ion-content{
+    --ion-background-color: #C1D0DA;
+     margin-top: 10px;
+  }
+  ion-item{
+    padding-top: 30px;
+   color: black;
+   font-size: 16px;
+   font-family: "Comic Sans MS", cursive, sans-serif;
+  
+  }
+  #con{
+      color: #ff2e63;
+      margin-top: 2%;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      margin-left: 30px;
+  }
+  

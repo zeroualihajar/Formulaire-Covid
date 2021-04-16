@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark" >
+  <a class="navbar-brand" routerLink="login">
+    <mat-icon>coronavirus</mat-icon>
+    <span>Covid-19</span>
+  </a>
+  <div>
+    <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">
+      Se connecter
+    </a>
+    <div class="subnav" *ngIf="loggedIn">
+      <button class="subnavbtn">Services<mat-icon style="font-size: 16px;">arrow_drop_down</mat-icon></button>
+      <div class="subnav-content">
+        <a href="/tableau">
+          <mat-icon>leaderboard</mat-icon>
+          <span style="padding-left:4px;">Tableau de bord</span>
+        </a>
+        <a routerLink="/traite">
+          <mat-icon>edit</mat-icon>
+          <span style="padding-left:4px;">Demandes traités</span>
+        </a>
+        <a routerLink="/patient">
+          <mat-icon>pending_actions</mat-icon>
+          <span style="padding-left:4px;">Demandes Non traités</span>
+        </a>
+      </div>
+    </div>
+
+    <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn" style="font-size: 16px">profile</a>
+    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn" style="font-size: 16px;">Se déconnecter</a> 
+  </div>
+</nav>

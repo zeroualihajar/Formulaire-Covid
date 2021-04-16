@@ -1,0 +1,99 @@
+
+<ion-content>
+  <ion-card-title ><ion-icon name="information-circle" style="margin-right: 3px; margin-top: 6px; "></ion-icon>Informations</ion-card-title>
+  <ion-card class="card-body"> 
+    <ion-avatar> 
+      <ion-img src="https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg"></ion-img>      
+    </ion-avatar>
+
+    <ion-card-content >
+        <form #InfoPersonelForm= ngForm (ngSubmit)="onSubmit()" *ngIf="!ver">
+           
+          
+          <ion-item id="firstName"  lines="none">               
+            <ion-input type="text" placeholder="Nom" [(ngModel)]="form.first_name" name="firstName"></ion-input>  
+          </ion-item>
+         
+          <ion-item id="lastName" lines="none">                   
+            <ion-input type="text" placeholder="Prénom" [(ngModel)]="form.last_name" name="lastName"></ion-input>    
+          </ion-item>
+
+
+          <ion-item id="city" lines="none">
+            <ion-label>Ville</ion-label>
+            <ion-select placeholder="Ville" interface="action-sheet" (ionChange)="ville($event)" name="city">
+              <ion-select-option *ngFor="let c of citie" [value]="c['name']">{{c['name']}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item id="address"  lines="none">                   
+            <ion-input type="text" placeholder="Adresse" [(ngModel)]="form.address" name="address"></ion-input>    
+          </ion-item>
+
+          <ion-item id="phone"  lines="none">                   
+            <ion-input type="number" placeholder="Téléphone" [(ngModel)]="form.phone" name="phone"></ion-input>    
+          </ion-item>
+
+          <ion-item id="age"  lines="none">                   
+            <ion-input type="number" placeholder="Age" [(ngModel)]="form.age" name="age"></ion-input>    
+          </ion-item>
+             
+          <ion-radio-group value="test" name="sexe"[(ngModel)]="form.sexe" > 
+            <ion-item  lines="none" > 
+              <ion-radio value="femme"></ion-radio>
+              <ion-label text-wrap style="margin-left: 3px;">Femme</ion-label>
+          
+              <ion-radio value="homme"></ion-radio>
+              <ion-label text-wrap style="margin-left: 3px;">Homme</ion-label>
+            </ion-item>         
+          </ion-radio-group>
+          <ion-button type="submit" class="primary" [disabled]="!InfoPersonelForm.valid">Enregistrer</ion-button>  
+        </form>
+      
+      <form *ngIf="ver"  style="border: 2px solid #1A10AF;">
+        <ion-list *ngFor="let per of info">
+            <ion-item id="firstName"  lines="none" > 
+              <ion-label>Nom</ion-label>              
+              <ion-label slot="end">{{per['first_name']}} </ion-label>
+            </ion-item>
+     
+            <ion-item id="lastName" lines="none">
+              <ion-label>Prénom</ion-label>                   
+              <ion-label slot="end">{{per['last_name']}} </ion-label>   
+            </ion-item>
+
+
+          <ion-item id="sexe" lines="none">
+            <ion-label>Genre</ion-label>
+            <ion-label slot="end">{{per['sexe']}}</ion-label>  
+          </ion-item>
+
+          <ion-item id="address"  lines="none">
+            <ion-label>Adresse</ion-label>        
+            <ion-label slot="end">{{per['address']}}</ion-label>  
+             
+          </ion-item>
+
+          <ion-item id="city"  lines="none">
+            <ion-label>ville</ion-label>   
+            <ion-label slot="end">{{per['city']}}</ion-label>                  
+              
+          </ion-item>
+
+          <ion-item id="phone"  lines="none"> 
+            <ion-label>Télèphone</ion-label>    
+            <ion-label slot="end">0.{{per['phone']}}</ion-label>                
+          </ion-item>
+         
+        
+          <ion-item id="age"  lines="none" >
+            <ion-label>Age</ion-label> 
+            <ion-label slot="end">{{per['age']}}</ion-label>  
+          </ion-item> 
+
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+ </ion-content>
+ 

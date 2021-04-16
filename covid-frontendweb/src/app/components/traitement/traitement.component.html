@@ -1,0 +1,48 @@
+<h1>Demande</h1>
+<div class="container" style="margin-top: 2%;">
+  <table class="table" style="border: 1px solid #1A10AF; background-color: #f8f5f1;" >
+    <thead style="background-color: #1A10AF; color:#fbe0c4; border: 1px solid #1A10AF; ">
+      <tr>
+        <th scope="col" style="text-align: center; font-size: 16px;">Question</th>
+        <th scope="col" style="text-align: center; font-size: 16px;">Réponse</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let obj of data">
+      <tr>
+        <td>Avez-vous été testé pour le corona virus?</td>
+        <td>{{obj.test_corona}}</td>
+      </tr>
+      <tr>
+        <td>En ce qui concerne l'isolement médical. lequel des éléments suivants s'applique à vous?</td>
+        <td>{{obj.isolement_medical}}</td>
+      </tr>
+      <tr>
+        <td>Avez-vous actuellement ou avez-vous déjà vécu l'une des situations suivantes?</td>
+          <td>{{obj.situations}}</td>
+      </tr>
+      <tr>
+        <td>Avez-vous eu les symptômes suivants aujourd'hui?.Veuillez les cocher si c'est le cas</td>
+        <td>{{obj.symptomes}}</td>
+      </tr>
+      <tr>
+        <td>Depuis combien du temps avez-vous toussé ?</td>
+        <td>{{obj.temps_tousse}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="form-group" style="margin-left: 1%; display: flex;" >
+  <label style="color: #1A10AF; font-size: 18px; font-weight: bold ; margin-top: 1%;">Résultat</label>
+  <select class="form-control" style="width: auto; margin-left: 2%;" name="resultat" [(ngModel)]="traitement.resultat">
+    <option value="positif">Positif</option>
+    <option value="négatif">Négatif</option>
+  </select>
+</div>
+
+
+
+<div>    
+  <button type="submit" class="button3 mx-2" style="vertical-align:middle" routerLink="/patient"><span>Revenir en arrière</span></button>
+  <button class="button float-right" routerLink="/infos/{{traitement.patient_id}}">Voir plus de détails</button>
+  <button class="button mx-2  float-right"  (click)="updateData()">Valider</button>
+</div>
